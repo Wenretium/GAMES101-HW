@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{75ba7b13-d154-4f12-8492-7b4f700376df}</ProjectGuid>
-    <RootNamespace>hw1</RootNamespace>
+    <ProjectGuid>{d5456a26-4217-448f-b879-71f5f4e22899}</ProjectGuid>
+    <RootNamespace>hw2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -59,23 +59,19 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\hw0\PropertySheet.props" />
-    <Import Project="PropertySheet.props" />
+    <Import Project="..\hw0\eigen+opencv.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\hw0\PropertySheet.props" />
-    <Import Project="PropertySheet.props" />
+    <Import Project="..\hw0\eigen+opencv.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\hw0\PropertySheet.props" />
-    <Import Project="PropertySheet.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\hw0\PropertySheet.props" />
-    <Import Project="PropertySheet.props" />
+    <Import Project="..\hw0\eigen+opencv.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -86,7 +82,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>S:\Computer Graphics\eigen-3.4.0;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -125,11 +120,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_world455d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -149,13 +144,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\main.cpp" />
-    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\rasterizer.cpp" />
-    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\Triangle.cpp" />
+    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\main.cpp" />
+    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\rasterizer.cpp" />
+    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\rasterizer.hpp" />
-    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\Triangle.hpp" />
+    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\global.hpp" />
+    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\rasterizer.hpp" />
+    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\Triangle.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
