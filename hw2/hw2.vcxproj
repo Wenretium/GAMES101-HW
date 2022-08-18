@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="global.hpp" />
+    <ClInclude Include="rasterizer.hpp" />
+    <ClInclude Include="Triangle.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="rasterizer.cpp" />
+    <ClCompile Include="Triangle.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -143,16 +153,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\main.cpp" />
-    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\rasterizer.cpp" />
-    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\Triangle.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\global.hpp" />
-    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\rasterizer.hpp" />
-    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework2\代码框架\Triangle.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -15,21 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\rasterizer.cpp">
+    <ClCompile Include="rasterizer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\Triangle.cpp">
+    <ClCompile Include="Triangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\rasterizer.hpp">
+    <None Include="PropertySheet.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rasterizer.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\GAMES101_Homework_S2021\Homework1\Assignment1\Triangle.hpp">
+    <ClInclude Include="Triangle.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
