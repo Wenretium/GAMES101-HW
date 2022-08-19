@@ -26,9 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="PropertySheet.props" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="rasterizer.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
