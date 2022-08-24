@@ -3,3 +3,4 @@
 - [x] 2022/8/4 HW2：三角形的栅格化与着色；用super-sampling抗锯齿
 - [x] 2022/8/19 HW3：插值颜色、法向量、纹理坐标、位置，实现逐fragment着色；编写Blinn-phong反射模型，纹理贴图，凹凸贴图，位移贴图；（未完成bonus）
 - [x] 2022/8/23 HW4：实现De Casteljau算法，递归绘出贝塞尔曲线；用多于4个控制点绘制贝塞尔曲线；实现对贝塞尔曲线的反走样，根据最近四个像素中心的距离来加权求像素点颜色。
+- [x] 2022/8/24 HW5：由摄像机向各个像素点方向发出eye ray（此部分有参考[网络资料](https://blog.csdn.net/dong89801033/article/details/114834898?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162216944616780357298394%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=162216944616780357298394&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-2-114834898.pc_search_result_cache&utm_term=games101%E4%BD%9C%E4%B8%9A5&spm=1018.2226.3001.4187)）；实现Moller-Trumbore算法，判断射线与三角形是否相交。
