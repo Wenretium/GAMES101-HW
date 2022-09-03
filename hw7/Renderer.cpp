@@ -44,7 +44,7 @@ void Renderer::MultiThreadRender(const Scene& scene)
     std::vector<Vector3f> framebuffer(scene.width * scene.height);
 
     // change the spp value to change sample ammount
-    int spp = 16;
+    int spp = 64;
     std::cout << "SPP: " << spp << "\n";
 
     // change the num_thread value to change number of threads

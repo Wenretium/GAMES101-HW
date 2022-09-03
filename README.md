@@ -15,3 +15,9 @@
 ![](README/image-20220829210308520.png)
 
 ![image-20220829210142887](README/image-20220829210142887.png)
+
+📌 2022/9/3 HW7：实现现代光线追踪算法中的Path Tracing算法；用多线程分别渲染不同像素块，实现加速渲染（bonus）；实现Microfacet材质并完成渲染（bonus），参考[资料](https://blog.csdn.net/weixin_44518102/article/details/122698851?spm=1001.2101.3001.6650.9&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-9.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-9.pc_relevant_default&utm_relevant_index=12)。
+
+![spp64](README/spp64.png)
+
+![Microfacet](README/Microfacet.png)

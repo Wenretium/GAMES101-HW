@@ -7,7 +7,7 @@
 
 #include "Vector.hpp"
 
-enum MaterialType { DIFFUSE};
+enum MaterialType { DIFFUSE, MICROFACET};
 
 class Material{
 private:
@@ -85,6 +85,43 @@ private:
         return a.x * B + a.y * C + a.z * N;
     }
 
+    // Microfacet材质相关函数
+    // 法线分布函数 D
+    float DistributionGGX(Vector3f N, Vector3f H, float roughness)
+    {
+        float a = roughness * roughness;
+        float a2 = a * a;
+        float NdotH = std::max(dotProduct(N, H), 0.0f);
+        float NdotH2 = NdotH * NdotH;
+
+        float nom = a2;
+        float denom = (NdotH2 * (a2 - 1.0) + 1.0);
+        denom = M_PI * denom * denom;
+
+        return nom / std::max(denom, 0.0000001f); // prevent divide by zero for roughness=0.0 and NdotH=1.0
+    }
+
+    // 几何函数 G
+    float GeometrySchlickGGX(float NdotV, float k)
+    {
+        float nom = NdotV;
+        float denom = NdotV * (1.0 - k) + k;
+
+        return nom / denom;
+    }
+
+    float GeometrySmith(Vector3f N, Vector3f V, Vector3f L, float roughness)
+    {
+        float r = (roughness + 1.0);
+        float k = (r * r) / 8.0;
+        float NdotV = std::max(dotProduct(N, V), 0.0f);
+        float NdotL = std::max(dotProduct(N, L), 0.0f);
+        float ggx2 = GeometrySchlickGGX(NdotV, k);
+        float ggx1 = GeometrySchlickGGX(NdotL, k);
+
+        return ggx1 * ggx2;
+    }
+
 public:
     MaterialType m_type;
     //Vector3f m_color;
@@ -132,6 +169,7 @@ Vector3f Material::getColorAt(double u, double v) {
 Vector3f Material::sample(const Vector3f &wi, const Vector3f &N){
     switch(m_type){
         case DIFFUSE:
+        case MICROFACET:
         {
             // uniform sample on the hemisphere
             float x_1 = get_random_float(), x_2 = get_random_float();
@@ -148,6 +186,7 @@ Vector3f Material::sample(const Vector3f &wi, const Vector3f &N){
 float Material::pdf(const Vector3f &wi, const Vector3f &wo, const Vector3f &N){
     switch(m_type){
         case DIFFUSE:
+        case MICROFACET:
         {
             // uniform sample probability 1 / (2 * PI)
             if (dotProduct(wo, N) > 0.0f)
@@ -168,6 +207,37 @@ Vector3f Material::eval(const Vector3f &wi, const Vector3f &wo, const Vector3f &
             if (cosalpha > 0.0f) {
                 Vector3f diffuse = Kd / M_PI;
                 return diffuse;
+            }
+            else
+                return Vector3f(0.0f);
+            break;
+        }
+
+        case MICROFACET:
+        {
+            float cosalpha = dotProduct(N, wo);
+            if (cosalpha > 0.0f) {
+                float roughness = 0.35; // 自定义粗糙度
+                Vector3f V = -wi; // 光线反射方向（这里加负号是因为传入的wi是眼睛朝向渲染点的）
+                Vector3f L = wo; // 光线进入入的反方向
+
+                float G = GeometrySmith(N, V, L, roughness);
+                Vector3f H = (V + L).normalized();
+                float D = DistributionGGX(N, H, roughness);
+                float F;
+                float etat = 1.85;
+                fresnel(wi, N, etat, F); // 计算 fresnel 系数: F
+                // 注意这里要控制点乘为非负
+                Vector3f specular = (F * G * D) / (4 * std::max(dotProduct(N, V),0.0f) * std::max(dotProduct(N, L), 0.0f));
+                
+                // 能量守恒
+                float ks_ = F;//反射比率
+                float kd_ = 1.0f - ks_;//折射比率
+
+                Vector3f diffuse = 1.0f / M_PI;//漫反射系数
+
+                // 因为在 specular 项里已经考虑了反射部分的比例：F。所以反射部分不需要再乘以 ks_ 
+                return Ks * specular + kd_ * Kd * diffuse;
             }
             else
                 return Vector3f(0.0f);

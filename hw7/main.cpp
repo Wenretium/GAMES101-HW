@@ -33,11 +33,18 @@ int main(int argc, char** argv)
     MeshTriangle light_("S:\\Computer Graphics\\hw\\GAMES101-HW\\hw7\\models/cornellbox/light.obj", light);
 
     scene.Add(&floor);
-    scene.Add(&shortbox);
-    scene.Add(&tallbox);
+    //scene.Add(&shortbox);
+    //scene.Add(&tallbox);
     scene.Add(&left);
     scene.Add(&right);
     scene.Add(&light_);
+
+    // Ball
+    Material* m = new Material(MICROFACET, Vector3f(0.0f));
+    m->Ks = Vector3f(0.45, 0.45, 0.45);
+    m->Kd = Vector3f(0.3, 0.3, 0.25);
+    Sphere sphere1(Vector3f(250, 150, 300), 150, m);
+    scene.Add(&sphere1);
 
     scene.buildBVH();
 
