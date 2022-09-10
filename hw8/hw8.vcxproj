@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{ef1bf532-9df0-46a3-956b-23fc9c824867}</ProjectGuid>
+    <RootNamespace>hw8</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\hw0\PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\hw0\PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\hw0\PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\hw0\PropertySheet.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>S:\Computer Graphics\OpenGL\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>S:\Computer Graphics\hw\GAMES101-HW\hw8\CGL\include;S:\Computer Graphics\hw\GAMES101-HW\hw8\CGL\deps\glew\include;S:\Computer Graphics\hw\GAMES101-HW\hw8\CGL\deps\glfw\deps;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;glfw3.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CGL\deps\glew\include\GL\glew.h" />
+    <ClInclude Include="CGL\deps\glew\include\GL\glxew.h" />
+    <ClInclude Include="CGL\deps\glew\include\GL\wglew.h" />
+    <ClInclude Include="CGL\deps\glfw\deps\EGL\eglext.h" />
+    <ClInclude Include="CGL\deps\glfw\deps\getopt.h" />
+    <ClInclude Include="CGL\deps\glfw\deps\glad\glad.h" />
+    <ClInclude Include="CGL\deps\glfw\deps\GL\glext.h" />
+    <ClInclude Include="CGL\deps\glfw\deps\GL\glxext.h" />
+    <ClInclude Include="CGL\deps\glfw\deps\GL\wglext.h" />
+    <ClInclude Include="CGL\deps\glfw\deps\KHR\khrplatform.h" />
+    <ClInclude Include="CGL\deps\glfw\deps\tinycthread.h" />
+    <ClInclude Include="CGL\deps\glfw\include\GLFW\glfw3.h" />
+    <ClInclude Include="CGL\deps\glfw\include\GLFW\glfw3native.h" />
+    <ClInclude Include="CGL\deps\glfw\src\cocoa_platform.h" />
+    <ClInclude Include="CGL\deps\glfw\src\egl_context.h" />
+    <ClInclude Include="CGL\deps\glfw\src\glx_context.h" />
+    <ClInclude Include="CGL\deps\glfw\src\internal.h" />
+    <ClInclude Include="CGL\deps\glfw\src\iokit_joystick.h" />
+    <ClInclude Include="CGL\deps\glfw\src\linux_joystick.h" />
+    <ClInclude Include="CGL\deps\glfw\src\mir_platform.h" />
+    <ClInclude Include="CGL\deps\glfw\src\nsgl_context.h" />
+    <ClInclude Include="CGL\deps\glfw\src\posix_time.h" />
+    <ClInclude Include="CGL\deps\glfw\src\posix_tls.h" />
+    <ClInclude Include="CGL\deps\glfw\src\wgl_context.h" />
+    <ClInclude Include="CGL\deps\glfw\src\win32_platform.h" />
+    <ClInclude Include="CGL\deps\glfw\src\win32_tls.h" />
+    <ClInclude Include="CGL\deps\glfw\src\winmm_joystick.h" />
+    <ClInclude Include="CGL\deps\glfw\src\wl_platform.h" />
+    <ClInclude Include="CGL\deps\glfw\src\x11_platform.h" />
+    <ClInclude Include="CGL\deps\glfw\src\xkb_unicode.h" />
+    <ClInclude Include="CGL\include\CGL\base64.h" />
+    <ClInclude Include="CGL\include\CGL\CGL.h" />
+    <ClInclude Include="CGL\include\CGL\color.h" />
+    <ClInclude Include="CGL\include\CGL\complex.h" />
+    <ClInclude Include="CGL\include\CGL\matrix3x3.h" />
+    <ClInclude Include="CGL\include\CGL\matrix4x4.h" />
+    <ClInclude Include="CGL\include\CGL\misc.h" />
+    <ClInclude Include="CGL\include\CGL\osdtext.h" />
+    <ClInclude Include="CGL\include\CGL\quaternion.h" />
+    <ClInclude Include="CGL\include\CGL\renderer.h" />
+    <ClInclude Include="CGL\include\CGL\tinyxml2.h" />
+    <ClInclude Include="CGL\include\CGL\vector2D.h" />
+    <ClInclude Include="CGL\include\CGL\vector3D.h" />
+    <ClInclude Include="CGL\include\CGL\vector4D.h" />
+    <ClInclude Include="CGL\include\CGL\viewer.h" />
+    <ClInclude Include="CGL\include\GLFW\glfw3.h" />
+    <ClInclude Include="CGL\include\GLFW\glfw3native.h" />
+    <ClInclude Include="CGL\include\GL\glew.h" />
+    <ClInclude Include="CGL\include\GL\glxew.h" />
+    <ClInclude Include="CGL\include\GL\wglew.h" />
+    <ClInclude Include="CGL\src\base64.h" />
+    <ClInclude Include="CGL\src\CGL.h" />
+    <ClInclude Include="CGL\src\color.h" />
+    <ClInclude Include="CGL\src\complex.h" />
+    <ClInclude Include="CGL\src\console.h" />
+    <ClInclude Include="CGL\src\matrix3x3.h" />
+    <ClInclude Include="CGL\src\matrix4x4.h" />
+    <ClInclude Include="CGL\src\osdtext.h" />
+    <ClInclude Include="CGL\src\quaternion.h" />
+    <ClInclude Include="CGL\src\renderer.h" />
+    <ClInclude Include="CGL\src\tinyxml2.h" />
+    <ClInclude Include="CGL\src\vector2D.h" />
+    <ClInclude Include="CGL\src\vector3D.h" />
+    <ClInclude Include="CGL\src\vector4D.h" />
+    <ClInclude Include="CGL\src\viewer.h" />
+    <ClInclude Include="src\application.h" />
+    <ClInclude Include="src\mass.h" />
+    <ClInclude Include="src\rope.h" />
+    <ClInclude Include="src\spring.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CGL\deps\glew\src\glew.c" />
+    <ClCompile Include="CGL\deps\glew\src\glewinfo.c" />
+    <ClCompile Include="CGL\deps\glew\src\visualinfo.c" />
+    <ClCompile Include="CGL\deps\glfw\deps\getopt.c" />
+    <ClCompile Include="CGL\deps\glfw\deps\glad.c" />
+    <ClCompile Include="CGL\deps\glfw\deps\tinycthread.c" />
+    <ClCompile Include="CGL\deps\glfw\examples\boing.c" />
+    <ClCompile Include="CGL\deps\glfw\examples\gears.c" />
+    <ClCompile Include="CGL\deps\glfw\examples\heightmap.c" />
+    <ClCompile Include="CGL\deps\glfw\examples\particles.c" />
+    <ClCompile Include="CGL\deps\glfw\examples\simple.c" />
+    <ClCompile Include="CGL\deps\glfw\examples\splitview.c" />
+    <ClCompile Include="CGL\deps\glfw\examples\wave.c" />
+    <ClCompile Include="CGL\deps\glfw\src\context.c" />
+    <ClCompile Include="CGL\deps\glfw\src\egl_context.c" />
+    <ClCompile Include="CGL\deps\glfw\src\glx_context.c" />
+    <ClCompile Include="CGL\deps\glfw\src\init.c" />
+    <ClCompile Include="CGL\deps\glfw\src\input.c" />
+    <ClCompile Include="CGL\deps\glfw\src\linux_joystick.c" />
+    <ClCompile Include="CGL\deps\glfw\src\mach_time.c" />
+    <ClCompile Include="CGL\deps\glfw\src\mir_init.c" />
+    <ClCompile Include="CGL\deps\glfw\src\mir_monitor.c" />
+    <ClCompile Include="CGL\deps\glfw\src\mir_window.c" />
+    <ClCompile Include="CGL\deps\glfw\src\monitor.c" />
+    <ClCompile Include="CGL\deps\glfw\src\posix_time.c" />
+    <ClCompile Include="CGL\deps\glfw\src\posix_tls.c" />
+    <ClCompile Include="CGL\deps\glfw\src\wgl_context.c" />
+    <ClCompile Include="CGL\deps\glfw\src\win32_init.c" />
+    <ClCompile Include="CGL\deps\glfw\src\win32_monitor.c" />
+    <ClCompile Include="CGL\deps\glfw\src\win32_time.c" />
+    <ClCompile Include="CGL\deps\glfw\src\win32_tls.c" />
+    <ClCompile Include="CGL\deps\glfw\src\win32_window.c" />
+    <ClCompile Include="CGL\deps\glfw\src\window.c" />
+    <ClCompile Include="CGL\deps\glfw\src\winmm_joystick.c" />
+    <ClCompile Include="CGL\deps\glfw\src\wl_init.c" />
+    <ClCompile Include="CGL\deps\glfw\src\wl_monitor.c" />
+    <ClCompile Include="CGL\deps\glfw\src\wl_window.c" />
+    <ClCompile Include="CGL\deps\glfw\src\x11_init.c" />
+    <ClCompile Include="CGL\deps\glfw\src\x11_monitor.c" />
+    <ClCompile Include="CGL\deps\glfw\src\x11_window.c" />
+    <ClCompile Include="CGL\deps\glfw\src\xkb_unicode.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\accuracy.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\clipboard.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\cursor.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\cursoranim.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\defaults.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\empty.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\events.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\fsaa.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\gamma.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\glfwinfo.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\iconify.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\joysticks.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\monitors.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\peter.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\reopen.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\sharing.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\tearing.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\threads.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\title.c" />
+    <ClCompile Include="CGL\deps\glfw\tests\windows.c" />
+    <ClCompile Include="CGL\examples\text.cpp" />
+    <ClCompile Include="CGL\examples\triangle.cpp" />
+    <ClCompile Include="CGL\src\base64.cpp" />
+    <ClCompile Include="CGL\src\color.cpp" />
+    <ClCompile Include="CGL\src\complex.cpp" />
+    <ClCompile Include="CGL\src\matrix3x3.cpp" />
+    <ClCompile Include="CGL\src\matrix4x4.cpp" />
+    <ClCompile Include="CGL\src\osdfont.c" />
+    <ClCompile Include="CGL\src\osdtext.cpp" />
+    <ClCompile Include="CGL\src\quaternion.cpp" />
+    <ClCompile Include="CGL\src\tinyxml2.cpp" />
+    <ClCompile Include="CGL\src\vector2D.cpp" />
+    <ClCompile Include="CGL\src\vector3D.cpp" />
+    <ClCompile Include="CGL\src\vector4D.cpp" />
+    <ClCompile Include="CGL\src\viewer.cpp" />
+    <ClCompile Include="CGL\tests\osd.cpp" />
+    <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\rope.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CGL\deps\glfw\docs\footer.html" />
+    <None Include="CGL\deps\glfw\docs\header.html" />
+    <None Include="CGL\deps\glfw\docs\html\annotated.html" />
+    <None Include="CGL\deps\glfw\docs\html\bug.html" />
+    <None Include="CGL\deps\glfw\docs\html\build.html" />
+    <None Include="CGL\deps\glfw\docs\html\build_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\classes.html" />
+    <None Include="CGL\deps\glfw\docs\html\compat.html" />
+    <None Include="CGL\deps\glfw\docs\html\compat_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\compile.html" />
+    <None Include="CGL\deps\glfw\docs\html\compile_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\context.html" />
+    <None Include="CGL\deps\glfw\docs\html\context_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\dir_2424ad704b206c89082f9408cac4dea1.html" />
+    <None Include="CGL\deps\glfw\docs\html\dir_cad64ac143687238294d0ef1c4308bc1.html" />
+    <None Include="CGL\deps\glfw\docs\html\dir_d0d9ff8e306589526ff939d1e8a51d35.html" />
+    <None Include="CGL\deps\glfw\docs\html\files.html" />
+    <None Include="CGL\deps\glfw\docs\html\functions.html" />
+    <None Include="CGL\deps\glfw\docs\html\functions_vars.html" />
+    <None Include="CGL\deps\glfw\docs\html\glfw3native_8h.html" />
+    <None Include="CGL\deps\glfw\docs\html\glfw3native_8h_source.html" />
+    <None Include="CGL\deps\glfw\docs\html\glfw3_8h.html" />
+    <None Include="CGL\deps\glfw\docs\html\glfw3_8h_source.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_b.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_c.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_d.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_b.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_c.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_d.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_f.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_g.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_h.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_i.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_j.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_k.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_l.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_m.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_n.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_o.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_p.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_r.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_s.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_defs_v.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_e.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_f.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_func.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_g.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_h.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_i.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_j.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_k.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_l.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_m.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_n.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_o.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_p.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_r.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_s.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_t.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_type.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_v.html" />
+    <None Include="CGL\deps\glfw\docs\html\globals_w.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__buttons.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__context.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__errors.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__init.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__input.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__joysticks.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__keys.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__mods.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__monitor.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__native.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__shapes.html" />
+    <None Include="CGL\deps\glfw\docs\html\group__window.html" />
+    <None Include="CGL\deps\glfw\docs\html\index.html" />
+    <None Include="CGL\deps\glfw\docs\html\input.html" />
+    <None Include="CGL\deps\glfw\docs\html\input_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\intro.html" />
+    <None Include="CGL\deps\glfw\docs\html\intro_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\main_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\modules.html" />
+    <None Include="CGL\deps\glfw\docs\html\monitor.html" />
+    <None Include="CGL\deps\glfw\docs\html\monitor_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\moving.html" />
+    <None Include="CGL\deps\glfw\docs\html\moving_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\news.html" />
+    <None Include="CGL\deps\glfw\docs\html\news_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\pages.html" />
+    <None Include="CGL\deps\glfw\docs\html\quick.html" />
+    <None Include="CGL\deps\glfw\docs\html\quick_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\rift.html" />
+    <None Include="CGL\deps\glfw\docs\html\rift_8dox.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_0.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_1.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_2.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_3.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_4.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_5.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_6.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_7.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_8.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_9.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_a.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_b.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_c.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_d.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_e.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\all_f.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\classes_0.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\defines_0.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\files_0.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\files_1.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\files_2.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\files_3.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\files_4.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\files_5.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\files_6.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\files_7.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\files_8.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\functions_0.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\groups_0.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\groups_1.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\groups_2.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\groups_3.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\groups_4.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\groups_5.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\groups_6.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\groups_7.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\groups_8.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\nomatches.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\pages_0.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\pages_1.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\pages_2.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\pages_3.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\pages_4.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\pages_5.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\pages_6.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\pages_7.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\pages_8.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\typedefs_0.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\variables_0.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\variables_1.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\variables_2.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\variables_3.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\variables_4.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\variables_5.html" />
+    <None Include="CGL\deps\glfw\docs\html\search\variables_6.html" />
+    <None Include="CGL\deps\glfw\docs\html\structGLFWgammaramp.html" />
+    <None Include="CGL\deps\glfw\docs\html\structGLFWimage.html" />
+    <None Include="CGL\deps\glfw\docs\html\structGLFWvidmode.html" />
+    <None Include="CGL\deps\glfw\docs\html\window.html" />
+    <None Include="CGL\deps\glfw\docs\html\window_8dox.html" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
